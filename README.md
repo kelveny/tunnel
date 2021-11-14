@@ -1,10 +1,10 @@
 # Reverse TCP tunnel
-For TCP-based services that do not have inbound end point, `Reverse TCP Tunnel` allows us to build a reverse TCP tunnel to open in bound access from a public end point. It virutally extends the TCP listening port to a remote machine in which a `Reverse TCP Tunnel` listener is running.
+`Reverse TCP Tunnel` allows us to build a reverse TCP tunnel to open inbound access via a public end point. It virutally extends the TCP listening port to a remote machine in which a `Reverse TCP Tunnel` listener is running.
 
-We use a simple signaling protocol for tunnel establishment and connection multiplexing.
+We use a simple signaling protocol for tunnel establishment and data traffic multiplexing. It is mainly for concept validation and personal exercises.
 
 ## Tunnel listener
-Tunnel listener runs in a public end point, when it receives a `ListenRequest` from service that needs tunnelled inbound access, it opens a dynamic TCP port at public interface and multiplexes traffic between service client and the service provider.
+Tunnel listener runs in a public end point, when it receives a `ListenRequest` from service that needs tunnelized inbound access, it opens a dynamic TCP port at public interface and multiplexes traffic between service client and the service provider.
 
 Example command to launch tunnel listener
 ```bash
@@ -12,7 +12,7 @@ Example command to launch tunnel listener
 ```
 
 ## Tunnel Connector
-Tunnel connector runs wihin the private network boundary, it has access to services that requires tunnelled inbound access.
+Tunnel connector runs wihin the private network boundary, it has access to services that requires tunnelized inbound access.
 
 Example command to establish a reverse tunnelling setup
 
